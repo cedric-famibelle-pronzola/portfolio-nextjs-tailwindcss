@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "title": "Alert’IFA",
+    "subtitle": "Outil permettant l’amélioration de la communication entre l’administration et les stagiaires, au sein d’un centre de formation.",
+    "tools": [
+      {
+        "icon": "SiHtml5",
+        "title": "HTML 5"
+      },
+      {
+        "icon": "SiCss3",
+        "title": "CSS 3"
+      },
+      {
+        "icon": "SiJavascript",
+        "title": "JavaScript"
+      },
+      {
+        "icon": "SiJquery",
+        "title": "jQuery"
+      },
+      {
+        "icon": "SiPhp",
+        "title": "PHP"
+      },
+      {
+        "icon": "SiMysql",
+        "title": "MySQL"
+      },
+      {
+        "icon": "SiBootstrap",
+        "title": "Bootstrap"
+      }
+    ],
+    "code": false,
+    "documentation": [
+      {
+        "title": "Administrateur",
+        "url": "/docs/alertifa/admin.pdf"
+      },
+      {
+        "title": "Utilisateurs",
+        "url": "/docs/alertifa/users.pdf"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Samnipoufè",
+    "subtitle": "To-Do list » (liste de tâches) simple et intuitive qui facilite la gestion du temps.",
+    "tools": [
+      {
+        "icon": "SiAngular",
+        "title": "Angular"
+      },
+      {
+        "icon": "SiTypescript",
+        "title": "TypeScript"
+      },
+      {
+        "icon": "SiBootstrap",
+        "title": "Bootstrap"
+      },
+      {
+        "icon": "SiFirebase",
+        "title": "Firebase"
+      }
+    ],
+    "code": true,
+    "documentation": [
+      {
+        "title": "Version Build",
+        "url": "https://gitlab.com/cedric-famibelle-pronzola/samnipoufe"
+      },
+      {
+        "title": "Version Dev",
+        "url": "https://gitlab.com/cedric-famibelle-pronzola/angular-todo-list"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Books’IFA",
+    "subtitle": "Exemple de site de vente en ligne.",
+    "tools": [
+      {
+        "icon": "SiHtml5",
+        "title": "HTML 5"
+      },
+      {
+        "icon": "SiCss3",
+        "title": "CSS 3"
+      },
+      {
+        "icon": "SiJavascript",
+        "title": "JavaScript"
+      },
+      {
+        "icon": "SiJquery",
+        "title": "jQuery"
+      },
+      {
+        "icon": "SiPhp",
+        "title": "PHP"
+      },
+      {
+        "icon": "SiMysql",
+        "title": "MySQL"
+      },
+      {
+        "icon": "SiBootstrap",
+        "title": "Bootstrap"
+      }
+    ],
+    "code": true,
+    "documentation": [
+      {
+        "title": "Voir le dépôt",
+        "url": "https://gitlab.com/cedric-famibelle-pronzola/librairie-poo"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Space Bullet",
+    "subtitle": "Jeux vidéo 2 joueurs. L’objectif est de détuire son adversaire. Des bonus apparaissent au cours de la partie.",
+    "tools": [
+      {
+        "icon": "SiJavascript",
+        "title": "JavaSCript"
+      },
+      {
+        "icon": "SiBootstrap",
+        "title": "Bootstrap"
+      }
+    ],
+    "code": true,
+    "documentation": [
+      {
+        "title": "Voir le dépôt",
+        "url": "https://gitlab.com/cedric-famibelle-pronzola/space_bullet"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Spaceship Hunt",
+    "subtitle": "Reproduction du jeu « Duck Hunt ». Possiblité de jouer en solo ou à deux.",
+    "tools": [
+      {
+        "icon": "SiJavascript",
+        "title": "JavaScript"
+      },
+      {
+        "icon": "SiJquery",
+        "title": "jQuery"
+      },
+      {
+        "icon": "SiBootstrap",
+        "title": "Bootstrap"
+      }
+    ],
+    "code": true,
+    "documentation": [
+      {
+        "title": "Voir le dépôt",
+        "url": "https://gitlab.com/cedric-famibelle-pronzola/spaceship-hunt"
+      }
+    ]
+  }
+]
