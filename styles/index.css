@@ -16,3 +16,6 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+body {
+  background-color: black;
+}
