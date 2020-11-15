@@ -1,6 +1,9 @@
+import {useState} from 'react'
 import PropTypes from 'prop-types'
 import dynamic from 'next/dynamic'
 import {MdOndemandVideo} from 'react-icons/md'
+
+import Modal from './modal'
 
 const siIconsList = {
   SiHtml5: dynamic(() => import('react-icons/si').then(icon => icon.SiHtml5)),
@@ -16,19 +19,27 @@ const siIconsList = {
 }
 
 export default function Projects({project}) {
-  const {title, subtitle, tools, documentation, code} = project
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const {title, subtitle, tools, documentation, code, demo} = project
   const icons = tools.map(tool => {
     const Component = siIconsList[tool.icon]
     const title = tool.title
     return {Component, title}
   })
 
+  const handleClick = () => {
+    setIsModalOpen(true)
+  }
+
   return (
     <li className='mb-5 rounded-md border p-5'>
+      {isModalOpen && (
+        <Modal title={title} isOpen={isModalOpen} setIsOpen={setIsModalOpen} vimeoUrl={demo} />
+      )}
       <div className='flex'>
         <div className='flex-shrink-0'>
-          <div className='flex cursor-pointer items-center justify-center h-12 w-12 rounded bg-blue-500 hover:bg-blue-700 text-white'>
-            <MdOndemandVideo size={30} />
+          <div className='flex cursor-pointer items-center justify-center h-12 w-12 rounded bg-blue-500 hover:bg-blue-700 text-white' onClick={handleClick}>
+            <MdOndemandVideo size={30} title='Démonstration vidéo' />
           </div>
         </div>
         <div className='ml-4'>
