@@ -43,7 +43,8 @@
         "title": "Utilisateurs",
         "url": "/docs/alertifa/users.pdf"
       }
-    ]
+    ],
+    "demo": "https://vimeo.com/376631754"
   },
   {
     "id": 2,
@@ -77,7 +78,8 @@
         "title": "Version Dev",
         "url": "https://gitlab.com/cedric-famibelle-pronzola/angular-todo-list"
       }
-    ]
+    ],
+    "demo": "https://vimeo.com/338239583"
   },
   {
     "id": 3,
@@ -119,7 +121,8 @@
         "title": "Voir le dépôt",
         "url": "https://gitlab.com/cedric-famibelle-pronzola/librairie-poo"
       }
-    ]
+    ],
+    "demo": "https://vimeo.com/338274928"
   },
   {
     "id": 4,
@@ -141,7 +144,8 @@
         "title": "Voir le dépôt",
         "url": "https://gitlab.com/cedric-famibelle-pronzola/space_bullet"
       }
-    ]
+    ],
+    "demo": "https://vimeo.com/339968713"
   },
   {
     "id": 5,
@@ -167,6 +171,7 @@
         "title": "Voir le dépôt",
         "url": "https://gitlab.com/cedric-famibelle-pronzola/spaceship-hunt"
       }
-    ]
+    ],
+    "demo": "https://vimeo.com/338273164"
   }
 ]
