@@ -16,12 +16,12 @@
     "react-player": "^2.6.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.0.2",
     "eslint-config-xo-nextjs": "^1.6.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "postcss-flexbugs-fixes": "4.2.1",
-    "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.7.4",
+    "postcss": "^8.1.9",
+    "tailwindcss": "^2.0.1",
     "xo": "^0.34.2"
   },
   "xo": {
