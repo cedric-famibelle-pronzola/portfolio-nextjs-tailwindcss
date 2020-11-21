@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Fediverse Social Network Timeline",
-    "subtitle": "Permet l’intégration d’une timeline d’une instance Mastodon",
+    "subtitle": "Permet l’intégration d’une timeline d’une instance Mastodon.",
     "tools": [
       {
         "icon": "SiHtml5",

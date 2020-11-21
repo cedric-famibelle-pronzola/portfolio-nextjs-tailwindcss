@@ -50,7 +50,7 @@ export default function Projects({project}) {
         </div>
       </div>
       <div className='text-white text-center'>
-        <h4 className='my-5'>Techno utilisées</h4>
+        <h4 className='my-5'>Technos utilisées</h4>
         <ul className='flex justify-center'>
           {icons.map(({Component, title}) => {
             return (
