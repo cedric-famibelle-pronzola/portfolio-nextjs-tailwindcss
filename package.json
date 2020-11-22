@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^0.2.0",
+    "dotenv": "^8.2.0",
     "next": "latest",
     "nodemailer": "^6.4.16",
     "react": "^16.13.1",
