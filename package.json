@@ -29,6 +29,9 @@
     "ignores": "pages/_app.js",
     "semicolon": false,
     "space": 2,
+    "envs": [
+      "browser"
+    ],
     "rules": {
       "react/react-in-jsx-scope": "off"
     }
