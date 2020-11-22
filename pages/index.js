@@ -15,10 +15,10 @@ export default function IndexPage({projects}) {
       </Head>
       <Layout>
         <div className='lg:text-center'>
-          <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:leading-10'>
+          <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-black dark:text-white sm:text-4xl sm:leading-10'>
             Liste des projets réalisés
           </h3>
-          <p className='mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto'>
+          <p className='mt-4 max-w-2xl text-xl leading-7 text-gray-500 dark:text-gray-200 lg:mx-auto'>
             Pour chacun d’entre eux, il y a une vidéo, la documentation ou le code source.
           </p>
         </div>

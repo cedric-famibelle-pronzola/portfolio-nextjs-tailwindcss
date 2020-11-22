@@ -43,14 +43,14 @@ export default function Projects({project}) {
           </div>
         </div>
         <div className='ml-4'>
-          <h4 className='text-lg leading-6 font-medium text-white font-bold'>{title}</h4>
-          <p className='mt-2 text-base leading-6 text-gray-500'>
+          <h4 className='text-lg leading-6 font-medium text-black dark:text-white font-bold'>{title}</h4>
+          <p className='mt-2 text-base leading-6 text-gray-500 dark:text-gray-200'>
             {subtitle}
           </p>
         </div>
       </div>
-      <div className='text-white text-center'>
-        <h4 className='my-5'>Technos utilisées</h4>
+      <div className='text-black dark:text-white text-center'>
+        <h4 className='my-5 font-bold'>Technos utilisées</h4>
         <ul className='flex justify-center'>
           {icons.map(({Component, title}) => {
             return (
@@ -62,7 +62,7 @@ export default function Projects({project}) {
         </ul>
       </div>
       <div className='text-center'>
-        <h4 className='my-5 text-white'>{code ? 'Code source' : 'Documentation'}</h4>
+        <h4 className='my-5 text-black dark:text-white'>{code ? 'Code source' : 'Documentation'}</h4>
         {documentation.map(({title, url}) => {
           return (
             <a key={title} href={url} target='_blank' rel='noreferrer' className='mx-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-700 rounded'>
