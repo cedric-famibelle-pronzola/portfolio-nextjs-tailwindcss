@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {RiSunLine, RiMoonFill} from 'react-icons/ri'
 
 export default function SwitchTheme() {
-  const [isDarkOn, setIsDarkOn] = useState(true)
+  const [isDarkOn, setIsDarkOn] = useState(false)
 
   useEffect(() => {
     if (isDarkOn) {
@@ -19,7 +19,7 @@ export default function SwitchTheme() {
         role='checkbox'
         aria-checked={isDarkOn}
         tabIndex='0'
-        className={`${isDarkOn ? 'bg-blue-500' : 'bg-gray-200'} relative inline-block flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline`}
+        className={`${isDarkOn ? 'bg-blue-500' : 'bg-gray-200'} relative inline-block flex-shrink-0 h-6 w-11 border-2 border-black rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline`}
         onClick={() => setIsDarkOn(!isDarkOn)}
       >
         <div
