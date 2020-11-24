@@ -1,12 +1,14 @@
 import Head from 'next/head'
-import fs from 'fs'
-import path from 'path'
-import PropTypes from 'prop-types'
+import useSWR from 'swr'
 
 import Layout from '../components/layout'
 import Projects from '../components/projects/projects'
 
-export default function IndexPage({projects}) {
+const fetcher = url => fetch(url).then(r => r.json())
+
+export default function IndexPage() {
+  const {data, error} = useSWR('/my-projects.json', fetcher)
+
   return (
     <div>
       <Head>
@@ -22,34 +24,21 @@ export default function IndexPage({projects}) {
             Pour chacun d’entre eux, il y a une vidéo, la documentation ou le code source.
           </p>
         </div>
-        <div className='mt-10 container mx-auto'>
-          <ul className='md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-x-8 md:gap-y-10'>
-            {projects.map(project => <Projects key={project.id} project={project} />)}
-          </ul>
-        </div>
+        {error && (
+          <div className='text-center container mx-auto'>
+            {error.message}
+          </div>
+        )}
+        {data ? (
+          <div className='mt-10 container mx-auto'>
+            <ul className='md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-x-8 md:gap-y-10'>
+              {data.map(data => <Projects key={data.id} project={data} />)}
+            </ul>
+          </div>
+        ) : (
+          <div className='mt-10 container mx-auto w-12 h-12 border-4 border-blue-600 rounded-full loader' />
+        )}
       </Layout>
     </div>
   )
-}
-
-export async function getStaticProps() {
-  const projectsDirectory = path.join(process.cwd(), 'lib')
-  const [filename] = fs.readdirSync(projectsDirectory)
-  const filePath = path.join(projectsDirectory, filename)
-  const rawContents = fs.readFileSync(filePath, 'utf8')
-  const projects = JSON.parse(rawContents)
-
-  return {
-    props: {
-      projects
-    }
-  }
-}
-
-IndexPage.propTypes = {
-  projects: PropTypes.array
-}
-
-IndexPage.defaultProps = {
-  projects: null
 }
