@@ -2,19 +2,21 @@
   "name": "portfolio-with-tailwindcss",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "node server.js"
   },
   "dependencies": {
     "@headlessui/react": "^0.2.0",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "next": "latest",
     "nodemailer": "^6.4.16",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
-    "react-player": "^2.6.2"
+    "react-player": "^2.6.2",
+    "swr": "^0.3.9"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.2",
@@ -27,7 +29,10 @@
   },
   "xo": {
     "extends": "xo-nextjs",
-    "ignores": "pages/_app.js",
+    "ignores": [
+      "pages/_app.js",
+      "server.js"
+    ],
     "semicolon": false,
     "space": 2,
     "envs": [
