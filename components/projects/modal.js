@@ -42,9 +42,11 @@ export default function Modal({title, isOpen, setIsOpen, vimeoUrl}) {
                 </strong>
                 <VscChromeClose title='Fermer' size={35} className='cursor-pointer bg-black text-white border-transparent hover:bg-blue-500' onClick={() => setIsOpen(false)} />
               </div>
-              <div className='h-full w-full'>
-                <ReactPlayer url={vimeoUrl} />
-              </div>
+              {vimeoUrl && (
+                <div className='h-full w-full'>
+                  <ReactPlayer url={vimeoUrl} />
+                </div>
+              )}
             </div>
           )}
         </Transition>
@@ -57,5 +59,9 @@ Modal.propTypes = {
   title: PropTypes.string.isRequired,
   isOpen: PropTypes.bool.isRequired,
   setIsOpen: PropTypes.func.isRequired,
-  vimeoUrl: PropTypes.string.isRequired
+  vimeoUrl: PropTypes.string
+}
+
+Modal.defaultProps = {
+  vimeoUrl: null
 }
