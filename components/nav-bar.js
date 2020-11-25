@@ -1,5 +1,7 @@
-import {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Link from 'next/link'
+
+import {AppContext} from '../pages/_app'
 
 import SwitchTheme from './switch-theme'
 
@@ -15,6 +17,7 @@ const links = [
 ]
 
 export default function NavBar() {
+  const {selectedTab} = useContext(AppContext)
   const [isShown, setIsShown] = useState(false)
 
   return (
@@ -25,11 +28,19 @@ export default function NavBar() {
             <div className='flex items-center'>
               <div className='hidden md:block'>
                 <div className='flex items-baseline space-x-4'>
-                  <Link href='/' >
-                    <a className='px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700'>Projets</a>
+                  <Link href='/'>
+                    <a
+                      className={`${selectedTab === 'home' ? 'bg-gray-900 text-white' : 'text-black'} px-3 py-2 rounded-md text-sm font-medium dark:text-gray-300 hover:text-white focus:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700`}
+                    >
+                      Projets
+                    </a>
                   </Link>
                   <Link href='/contact'>
-                    <a className='px-3 py-2 rounded-md text-sm font-medium text-black dark:text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'>Contact</a>
+                    <a
+                      className={`${selectedTab === 'contact' ? 'bg-gray-900 text-white' : 'text-black'} px-3 py-2 rounded-md text-sm font-medium dark:text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700`}
+                    >
+                      Contact
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -67,10 +78,10 @@ export default function NavBar() {
         <div className={`${isShown ? 'block' : 'hidden'} md:hidden`}>
           <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
             <Link href='/'>
-              <a className='block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700'>Projets</a>
+              <a className={`${selectedTab === 'home' ? 'bg-gray-900 text-white' : 'text-black'} block px-3 py-2 rounded-md text-base font-medium dark:text-gray-300 focus:outline-none focus:text-white hover:text-white hover:bg-gray-700 focus:bg-gray-700`}>Projets</a>
             </Link>
             <Link href='/contact'>
-              <a className='block px-3 py-2 rounded-md text-base font-medium text:black dark:text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'>Contact</a>
+              <a className={`${selectedTab === 'contact' ? 'bg-gray-900 text-white' : 'text-black'} block px-3 py-2 rounded-md text-base font-medium dark:text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700`}>Contact</a>
             </Link>
           </div>
           <div className='px-2 pt-2 pb-3 border-t border-gray-700'>

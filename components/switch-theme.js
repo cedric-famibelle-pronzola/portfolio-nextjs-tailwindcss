@@ -1,16 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, {useContext} from 'react'
 import {RiSunLine, RiMoonFill} from 'react-icons/ri'
+import {AppContext} from '../pages/_app'
 
 export default function SwitchTheme() {
-  const [isDarkOn, setIsDarkOn] = useState(false)
-
-  useEffect(() => {
-    if (isDarkOn) {
-      document.querySelector('html').classList.add('dark')
-    } else {
-      document.querySelector('html').classList.remove('dark')
-    }
-  }, [isDarkOn])
+  const {isDarkOn, setIsDarkOn} = useContext(AppContext)
 
   return (
     <div className='flex justify-between items-center space-x-4'>

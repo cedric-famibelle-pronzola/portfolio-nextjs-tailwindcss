@@ -1,13 +1,21 @@
+import React, {useContext, useEffect} from 'react'
 import Head from 'next/head'
 import useSWR from 'swr'
 
 import Layout from '../components/layout'
 import Projects from '../components/projects/projects'
 
+import {AppContext} from './_app'
+
 const fetcher = url => fetch(url).then(r => r.json())
 
 export default function IndexPage() {
+  const {setSelectedTab} = useContext(AppContext)
   const {data, error} = useSWR('/my-projects.json', fetcher)
+
+  useEffect(() => {
+    setSelectedTab('home')
+  }, [setSelectedTab])
 
   return (
     <div>
