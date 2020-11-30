@@ -1,17 +1,15 @@
 import React, {useContext, useEffect} from 'react'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
-import useSWR from 'swr'
 
 import Layout from '../components/layout'
 import Projects from '../components/projects/projects'
+import {connectToDatabase} from '../lib/mongodb'
 
 import {AppContext} from './_app'
 
-const fetcher = url => fetch(url).then(r => r.json())
-
-export default function IndexPage() {
+export default function IndexPage({projects}) {
   const {setSelectedTab} = useContext(AppContext)
-  const {data, error} = useSWR('/my-projects.json', fetcher)
 
   useEffect(() => {
     setSelectedTab('home')
@@ -32,21 +30,32 @@ export default function IndexPage() {
             Pour chacun d’entre eux, il y a une vidéo, la documentation ou le code source.
           </p>
         </div>
-        {error && (
-          <div className='text-center container mx-auto'>
-            {error.message}
-          </div>
-        )}
-        {data ? (
-          <div className='mt-10 container mx-auto'>
-            <ul className='md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-x-8 md:gap-y-10'>
-              {data.map(data => <Projects key={data.id} project={data} />)}
-            </ul>
-          </div>
-        ) : (
-          <div className='mt-10 container mx-auto w-12 h-12 border-4 border-blue-600 rounded-full loader' />
-        )}
+        <div className='mt-10 container mx-auto'>
+          <ul className='md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-x-8 md:gap-y-10'>
+            {projects.map(project => <Projects key={project._id} project={project} />)}
+          </ul>
+        </div>
       </Layout>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const {db} = await connectToDatabase()
+
+  const projects = await db
+    .collection('projects')
+    .find({})
+    .sort({priority: 1})
+    .toArray()
+
+  return {
+    props: {
+      projects: JSON.parse(JSON.stringify(projects))
+    }
+  }
+}
+
+IndexPage.propTypes = {
+  projects: PropTypes.array.isRequired
 }
