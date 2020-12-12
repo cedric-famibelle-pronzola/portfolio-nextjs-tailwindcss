@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useRef} from 'react'
 import {SiMinutemailer} from 'react-icons/si'
 
 import Modal from './projects/modal'
@@ -8,6 +8,7 @@ export default function ContactForm() {
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
   const [isMessageSent, setIsMessageSent] = useState(false)
+  const formRef = useRef()
 
   const sendForm = data => {
     fetch('/send-email', {
@@ -62,11 +63,12 @@ export default function ContactForm() {
     setEmail('')
     setSubject('')
     setMessage('')
+    formRef.current.reset()
   }
 
   return (
     <div>
-      <form id='contact-form' className='container mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col my-20' onSubmit={handleSubmit}>
+      <form ref={formRef} id='contact-form' className='container mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col my-20' onSubmit={handleSubmit}>
         <div className='-mx-3 md:flex mb-6 flex-col'>
           <div className='md:w-1/2 px-3 mb-6 md:mb-0'>
             <label className='block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2' htmlFor='grid-first-name'>
