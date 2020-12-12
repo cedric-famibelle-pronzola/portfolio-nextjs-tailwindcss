@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 
 import ContactForm from '../components/contact-form'
-import Layout from '../components/layout'
+import NavBar from '../components/nav-bar'
 
 import {AppContext} from './_app'
 
@@ -13,8 +13,9 @@ export default function Contact() {
   }, [setSelectedTab])
 
   return (
-    <Layout>
+    <>
+      <NavBar />
       <ContactForm />
-    </Layout>
+    </>
   )
 }
