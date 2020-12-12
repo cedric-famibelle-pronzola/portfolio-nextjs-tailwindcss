@@ -1,5 +1,6 @@
 const express = require('express')
 const next = require('next')
+const compression = require('compression')
 const {sendMail} = require('./lib/sendmail')
 
 const port = process.env.PORT || 3000
@@ -9,6 +10,11 @@ const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   const app = express()
+
+  if (!dev) {
+    app.use(compression())
+  }
+
   app.use(express.json()) // for parsing application/json
 
   app.post('/send-email', (req, res) => {
