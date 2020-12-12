@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import {SiMinutemailer} from 'react-icons/si'
 
 import Modal from './projects/modal'
@@ -16,6 +16,7 @@ export default function ContactForm() {
       body: JSON.stringify(data)
     }).then(response => {
       if (response.ok) {
+        resetFrom()
         setIsMessageSent(true)
       } else {
         throw new Error('Une erreur s’est produite')
@@ -57,13 +58,11 @@ export default function ContactForm() {
     }
   }
 
-  useEffect(() => {
-    if (isMessageSent) {
-      setEmail('')
-      setSubject('')
-      setMessage('')
-    }
-  }, [isMessageSent])
+  const resetFrom = () => {
+    setEmail('')
+    setSubject('')
+    setMessage('')
+  }
 
   return (
     <div>
