@@ -39,7 +39,7 @@ export default function IndexPage({projects}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const {db} = await connectToDatabase()
 
   const projects = await db
